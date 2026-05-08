@@ -1,0 +1,123 @@
+/* Färger */
+:root {
+    --green: #0b8a25;
+    --white: #ffffff;
+    --dark: #0a0a0a;
+}
+
+/* Grundstil */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: var(--white);
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--green), #0f5f1a);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: slideDown 1.5s ease-out;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--green);
+    transform: scale(1.1);
+}
+
+/* Sektioner */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section.alt {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Animation: Bajen-flagga */
+.flag-animation {
+    width: 200px;
+    height: 120px;
+    margin: 30px auto;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--green),
+        var(--green) 40px,
+        var(--white) 40px,
+        var(--white) 80px
+    );
+    animation: wave 2s infinite ease-in-out;
+    border-radius: 6px;
+}
+
+/* Animation: Kir-glow */
+.kir-glow {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff00aa, #660044);
+    animation: pulse 2s infinite;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    opacity: 0.8;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wave {
+    0% { transform: skewY(0deg); }
+    50% { transform: skewY(6deg); }
+    100% { transform: skewY(0deg); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #ff00aa; }
+    50% { box-shadow: 0 0 30px #ff00aa; }
+    100% { box-shadow: 0 0 10px #ff00aa; }
+}
